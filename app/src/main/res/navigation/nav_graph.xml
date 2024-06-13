@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/ItemListFragment">
+
+    <fragment
+        android:id="@+id/ItemListFragment"
+        android:name="com.example.a6112_final_project_kotlin.ItemListFragment"
+        tools:layout="@layout/fragment_item_list">
+
+        <action
+            android:id="@+id/action_ItemListFragment_to_EditItemFragment"
+            app:destination="@id/EditItemFragment" />
+
+    </fragment>
+    <fragment
+        android:id="@+id/EditItemFragment"
+        android:name="com.example.a6112_final_project_kotlin.EditItemFragment"
+        tools:layout="@layout/fragment_item_form">
+        <argument
+            android:name="item"
+            app:argType="com.example.a6112_final_project_kotlin.Item" />
+
+        <action
+            android:id="@+id/action_EditItemFragment_to_ItemListFragment"
+            app:destination="@id/ItemListFragment" />
+    </fragment>
+</navigation>
